@@ -331,7 +331,7 @@ When this is completed, pppd will commence passing data packets
 The \fIdemand\fR option implies the \fIpersist\fR option.  If this
 behaviour is not desired, use the \fInopersist\fR option after the
 \fIdemand\fR option.  The \fIidle\fR and \fIholdoff\fR
-options are also useful in conjuction with the \fIdemand\fR option.
+options are also useful in conjunction with the \fIdemand\fR option.
 .TP
 .B domain \fId
 Append the domain name \fId\fR to the local host name for authentication
@@ -937,7 +937,7 @@ pseudo-tty master/slave pair and use the slave as its terminal
 device.  The \fIscript\fR will be run in a child process with the
 pseudo-tty master as its standard input and output.  An explicit
 device name may not be given if this option is used.  (Note: if the
-\fIrecord\fR option is used in conjuction with the \fIpty\fR option,
+\fIrecord\fR option is used in conjunction with the \fIpty\fR option,
 the child process will have pipes on its standard input and output.)
 .TP
 .B receive\-all
@@ -1052,7 +1052,7 @@ in the pseudonym.
 .TP
 .B srp\-use\-pseudonym
 When operating as an EAP SRP\-SHA1 client, attempt to use the pseudonym
-stored in ~/.ppp_psuedonym first as the identity, and save in this
+stored in ~/.ppp_pseudonym first as the identity, and save in this
 file any pseudonym offered by the peer during authentication.
 .TP
 .B sync
@@ -1735,6 +1735,7 @@ links, used for matching links to bundles in multilink operation.  May
 be examined by external programs to obtain information about running
 pppd instances, the interfaces and devices they are using, IP address
 assignments, etc.
+.TP
 .B /etc/ppp/pap\-secrets
 Usernames, passwords and IP addresses for PAP authentication.  This
 file should be owned by root and not readable or writable by any other

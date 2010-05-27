@@ -33,7 +33,7 @@ received from the PPPoE layer just as if the link was a serial line
 
 With this in mind, the goal of the implementation of PPPoE support in
 Linux is to allow users to simply specify that the device they intend
-to use for the PPP connection is an ethernet device (i.e. "eth0") and
+to use for the PPP connection is an ethernet device (e.g. "eth0") and
 the rest of the system should function as usual.
 
 2. Using PPPoE
@@ -91,3 +91,14 @@ The PPPoE plugin included in this package is a component of the
 Roaring Penguin PPPoE package, included in this package courtesy of
 Roaring Penguin Software. (http://www.roaringpenguin.com).
 
+5. Hints
+--------
+
+- For setting up the connection and debugging problems if it does not
+  work at once, the userspace PPPoE implementation is more useful, as
+  the kernel module does not help with access concentrator problems.
+
+- If your machine acts as a gateway for other machines, a line like 
+  iptables -A FORWARD -o ppp0 -p tcp -m tcp --tcp-flags SYN,RST SYN -j
+  TCPMSS --clamp-mss-to-pmtu in your firewall configuration and reading
+  the iptables man-page might help.
