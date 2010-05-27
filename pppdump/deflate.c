@@ -39,6 +39,7 @@
 #include <sys/types.h>
 #include <stdio.h>
 #include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "ppp_defs.h"
@@ -237,8 +238,8 @@ z_decompress(arg, mi, inlen, mo, outlenp)
 {
     struct deflate_state *state = (struct deflate_state *) arg;
     u_char *rptr, *wptr;
-    int rlen, olen, ospace;
-    int seq, i, flush, r, decode_proto;
+    int rlen, olen;
+    int seq, r;
 
     rptr = mi;
     if (*rptr == 0)
